@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    font-family: "Montserrat";
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    min-width: 100vw;
+    min-height: 100vh;
+    background-image: url("../img/bgs/banner.jpg");
+}
