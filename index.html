@@ -1,56 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru"> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avrasya Hastanesi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     <header class="header">
-        <section class="header__bar">
-            <a class="header__logo">
-                <img src="./img/logo.svg" alt="Avrasya Hastanesi" class="logo__img">
-            </a>
-            <nav class="header__navigation navigation">
-                <ul>
-                    <li>
-                        <a class="navigation__link" href="#">Клиника</a>
-                    </li>
-                    <li>
-                        <a class="navigation__link" href="#">Процедура</a>
-                    </li>
-                    <li>
-                        <a class="navigation__link" href="#">Цены</a>
-                    </li>
-                    <li>
-                        <a class="navigation__link" href="#">Организация</a>
-                    </li>
-                    <li>
-                        <a class="navigation__link" href="#">Контакты</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="header__contact contact">
-                <a href="contact__phone">+7 (958) 756-98-14</a>
-                <div>
-                    <span class="contact__title">или пишите</span>
-                    <ul>
-                        <li>
-                            <a class="contact__social" href="#"></a>
+        <section class="header__bar bar">
+            <div class="header__container bar__container">
+                <a class="header__logo logo" href="#">
+                    <img src="./img/logo.svg" alt="Avrasya Hastanesi" class="logo__img">
+                </a>
+                <nav class="header__navigation navigation">
+                    <ul class="navigation__list">
+                        <li class="navigation__item">
+                            <a class="navigation__link" href="#">Клиника</a>
                         </li>
-                        <li>
-                            <a class="contact__social" href="#"></a>
+                        <li class="navigation__item">
+                            <a class="navigation__link" href="#">Процедура</a>
                         </li>
-                        <li>
-                            <a class="contact__social" href="#"></a>
+                        <li class="navigation__item">
+                            <a class="navigation__link" href="#">Цены</a>
                         </li>
-                        <li>
-                            <a class="contact__social" href="#"></a>
+                        <li class="navigation__item">
+                            <a class="navigation__link" href="#">Организация</a>
+                        </li>
+                        <li class="navigation__item">
+                            <a class="navigation__link" href="#">Контакты</a>
                         </li>
                     </ul>
+                </nav>
+                <div class="header__contact contact">
+                    <a class="contact__phone" href="#">+7 (958) 756-98-14</a>
+                    <div class="contact__block">
+                        <span class="contact__title">или пишите</span>
+                        <a class="contact__social" href="#">
+                            Написать в
+                            <img class="contact__whatsapp" src="./img/icons/contacts/whatsapp.svg" alt="WhatsApp">
+                        </a>
+                        <a class="contact__social" href="#">
+                            Написать в
+                            <img class="contact__telegram" src="./img/icons/contacts/telegram.svg" alt="Telegram">
+                        </a>
+                    </div>
                 </div>
+                 <button class="bar__btn">Консультация</button>
             </div>
+        </section>
+        <section class="header__content content">
+            <div class="header__container">
+                <h1 class="header__title">Трансплантация волос <br>в одной из лучших клиник Турции <br>Avrasya Hastanesi</h1>
+                <ul class="header__list list">
+                    <li class="list__item item">
+                        <img src="./img/icons/cash_in_hand.svg" alt="Стоимость/время: от 50 000₽ / 3 дня" class="item__icon">
+                        <span class="item__descr">Стоимость/время: от 50 000₽ / 3 дня</span>
+                    </li>
+                    <li class="list__item item">
+                        <img src="./img/icons/chat_1.svg" alt="Переводчик, проживание и сопровождение" class="item__icon">
+                        <span class="item__descr">Переводчик, проживание и сопровождение</span>
+                    </li>
+                    <li class="list__item item">
+                        <img src="./img/icons/approval.svg" alt="Пожизненная гарантия на пересадку" class="item__icon">
+                        <span class="item__descr">Пожизненная гарантия на пересадку</span>
+                    </li>
+                </ul>
+                <button class="content__btn">Узнать больше</button>
+            </div>
+        </section>
+        <section class="header__reviews reviews">
+            <span class="reviews__descr">Отзывы <br>о клинике</span>
+            <a class="reviews__btn" href="#">
+                <img src="./img/icons/loading.svg" alt="Просмотреть отзывы" class="reviews__play">
+            </a>
         </section>
     </header>
 </body>
