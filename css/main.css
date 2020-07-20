@@ -22,6 +22,7 @@ button {
 .header {
   min-width: 100%;
   min-height: 100vh;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,7 +35,7 @@ button {
           justify-content: space-between;
 }
 
-.header__container {
+.header__container, .about__container {
   max-width: 130rem;
   padding: 0 1.5rem;
   margin: auto;
@@ -77,7 +78,7 @@ button {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.header__title {
+.header__title, .about__heading {
   font-style: normal;
   font-weight: 500;
   font-size: 3.5rem;
@@ -318,8 +319,193 @@ button {
   border-radius: 100%;
 }
 
+.reviews__btn::after {
+  width: 0;
+  height: 0;
+}
+
 .reviews__descr {
   width: 8rem;
   margin-right: 0.8rem;
+}
+
+.about {
+  padding: 5rem 0;
+  font-size: 1.8rem;
+  line-height: 4.5rem;
+  background-color: #F9F9F9;
+}
+
+.about__heading {
+  margin: 4rem 0;
+}
+
+.about__list {
+  margin: 6rem 0;
+}
+
+.about__item {
+  width: 33.33333%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 3rem;
+}
+
+.about__icon {
+  margin-bottom: 2rem;
+}
+
+.about__services {
+  width: 100%;
+  margin: 10rem 0 4rem;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+  -ms-grid-rows: (17rem)[3];
+      grid-template-rows: repeat(3, 17rem);
+      grid-template-areas: "servItem01 servItem03 servItem03 servItem06 servItem08 servItem10" "servItem02 servItem03 servItem03 servItem07 servItem08 servItem11" "servItem02 servItem04 servItem05 servItem07 servItem09 servItem11";
+  grid-gap: 2rem;
+  list-style-type: none;
+}
+
+.services__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.services__item:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: servItem01;
+}
+
+.services__item:nth-child(2) {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: servItem02;
+}
+
+.services__item:nth-child(3) {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: servItem03;
+}
+
+.services__item:nth-child(4) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: servItem04;
+}
+
+.services__item:nth-child(5) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: servItem05;
+}
+
+.services__item:nth-child(6) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: servItem06;
+}
+
+.services__item:nth-child(7) {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 4;
+  grid-area: servItem07;
+}
+
+.services__item:nth-child(8) {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 5;
+  grid-area: servItem08;
+}
+
+.services__item:nth-child(9) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 5;
+  grid-area: servItem09;
+}
+
+.services__item:nth-child(10) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 6;
+  grid-area: servItem10;
+}
+
+.services__item:nth-child(11) {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 6;
+  grid-area: servItem11;
+}
+
+.services__picture {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.services__button {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-width: 0;
+  font-size: 0.1rem;
+  color: transparent;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(191, 170, 134, 0.71)), to(rgba(191, 170, 134, 0.71)));
+  background: linear-gradient(0deg, rgba(191, 170, 134, 0.71), rgba(191, 170, 134, 0.71));
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  opacity: 0;
+}
+
+.services__button:hover, .services__button:focus {
+  opacity: 1;
+}
+
+.services__button:hover::before, .services__button:focus::before {
+  -webkit-transform: rotateZ(90deg);
+          transform: rotateZ(90deg);
+}
+
+.services__button::before {
+  content: "";
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  background-position: center center;
+  background-image: url(../img/icons/add.svg);
+  background-repeat: no-repeat;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 /*# sourceMappingURL=main.css.map */
