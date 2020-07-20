@@ -100,6 +100,8 @@
     }
 
     &__picture {
+        min-width: 100%;
+        min-height: 100%;
         object-fit: cover;
     }
 
@@ -129,14 +131,136 @@
         }
 
         &::before {
-            content: "";
-            width: 5rem;
-            height: 5rem;
+            content: url(../img/icons/add.svg);
+            width: 4.9rem;
+            height: 4.9rem;
             position: absolute;
-            background-position: center center;
-            background-image: url(../img/icons/add.svg);
-            background-repeat: no-repeat;
+            border-radius: 100%;
             transition: all .3s;
         }
+    }
+}
+
+.comments {
+    @extend .about;
+    padding: 10rem 1.5rem; 
+    background-color: rgb(255, 255, 255);
+
+    &__container {
+        @extend .about__container;
+        display: flex;
+    }
+
+    &__left {
+        max-width: 44rem;
+        margin-right: 5.5rem;
+        display: flex;
+    }
+
+    &__photo {
+        @extend .services__picture;
+    }
+
+    &__right {
+        padding: 0 6.5rem;
+        box-shadow: 0px 12px 42px rgba(214, 222, 226, 0.42);
+    }
+
+    &__author {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.author {
+    &__name {
+        display: block;
+        font-weight: bold;
+        line-height: 2.4rem;
+    }
+
+    &__position {
+        font-size: 1.5rem;
+    }
+
+    &__signature {
+        height: 5rem;
+        margin-top: 5rem;
+    }
+}
+
+.fue {
+    @extend .about;
+    padding: 5rem 1.5rem 10rem;
+
+    &__container {
+        @extend .about__container;
+    }
+
+    &__heading,
+    &__descr {
+        margin-bottom: 3rem;
+    }
+
+    &__descr {
+        margin-top: 3rem;
+    }
+
+    &__num-list {
+        padding: 0;
+        list-style-type: none;
+    }
+}
+
+.num-list {
+    counter-reset: item;
+
+    &__item {
+        margin-top: 4rem;
+        display: flex;
+        align-items: center;
+    }
+
+    &__left {
+        width: 50%;
+        margin-right: 11.5rem;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        &::before {
+            content: '0' counter(item);
+            counter-increment: item;
+
+            width: 6.5rem;
+            height: 6.5rem;
+            position: absolute;
+            right: -3.25rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+            background-color: rgb(255, 255, 255);
+
+            font-style: normal;
+            font-weight: 500;
+            font-size: 2.4rem;
+            line-height: 3rem;
+            color: #BFAA86;
+        }
+
+        &::after {
+            content: "";
+            width: 9rem;
+            height: 9rem;
+            position: absolute;
+            right: -4.5rem;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 100%;
+        }
+    }
+
+    &__photo {
+        @extend .services__picture;
     }
 }
