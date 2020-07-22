@@ -39,9 +39,9 @@
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: repeat(3, 17rem);
         grid-template-areas:
-            "servItem01 servItem03 servItem03 servItem06 servItem08 servItem10"
-            "servItem02 servItem03 servItem03 servItem07 servItem08 servItem11"
-            "servItem02 servItem04 servItem05 servItem07 servItem09 servItem11";
+            "item01 item03 item03 item06 item08 item10"
+            "item02 item03 item03 item07 item08 item11"
+            "item02 item04 item05 item07 item09 item11";
         grid-gap: 2rem;
         list-style-type: none;
     }
@@ -54,47 +54,47 @@
         overflow: hidden;
 
         &:nth-child(1) {
-            grid-area: servItem01;
+            grid-area: item01;
         }
         
         &:nth-child(2) {
-            grid-area: servItem02;
+            grid-area: item02;
         }
         
         &:nth-child(3) {
-            grid-area: servItem03;
+            grid-area: item03;
         }
         
         &:nth-child(4) {
-            grid-area: servItem04;
+            grid-area: item04;
         }
         
         &:nth-child(5) {
-            grid-area: servItem05;
+            grid-area: item05;
         }
         
         &:nth-child(6) {
-            grid-area: servItem06;
+            grid-area: item06;
         }
         
         &:nth-child(7) {
-            grid-area: servItem07;
+            grid-area: item07;
         }
         
         &:nth-child(8) {
-            grid-area: servItem08;
+            grid-area: item08;
         }
         
         &:nth-child(9) {
-            grid-area: servItem09;
+            grid-area: item09;
         }
         
         &:nth-child(10) {
-            grid-area: servItem10;
+            grid-area: item10;
         }
         
         &:nth-child(11) {
-            grid-area: servItem11;
+            grid-area: item11;
         }
         
     }
@@ -262,5 +262,171 @@
 
     &__photo {
         @extend .services__picture;
+    }
+}
+
+.results {
+    @extend .about;
+    background-color: rgb(255, 255, 255);
+
+    &__container {
+        @extend .about__container;
+    }
+
+    &__heading {
+        text-align: center;
+    }
+
+    &__carousel {
+        margin: 7rem 0 9rem;
+    }
+
+    &__list {
+        @extend .list;
+        margin: 0;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__item {
+        height: 21.5rem;
+        width: 28.347%;
+        margin-bottom: 5.5rem;
+        display: flex;
+    }
+
+    &__photo {
+        @extend .services__picture;
+    }
+
+    &__link {
+        margin-bottom: 3rem;
+        display: block;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 5.2rem;
+        text-align: center;
+        text-decoration-line: underline;
+        color: #bd9457;
+    }
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__list {
+        @extend .list;
+        overflow: hidden;
+        margin: 0 5.5rem;
+    }
+
+    &__item {
+        min-width: 100%;
+        display: flex;
+    }
+
+    &__photo {
+        @extend .services__picture;
+    }
+
+    &__btn {
+        width: 5rem;
+        height: 5rem;
+        border-width: 0;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px .8rem 2rem rgba(214, 222, 226, 0.42);
+        border-radius: 100%;
+        font-size: 0.1rem;
+        color: transparent;
+        background-image: url(../img/icons/arrow_black.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &--prev {
+            transform: rotateZ(180deg);
+        }
+    }
+}
+
+.reviews {
+    @extend .about;
+
+    &__container {
+        @extend .about__container;
+    }
+
+    &__heading {
+        margin-top: 0;
+    }
+
+    &__list {
+        @extend .about__services;
+        margin: 0 0 5rem;
+        grid-template-columns: 2fr repeat(2, 1fr);
+        grid-template-rows: repeat(2, 25.5rem);
+        grid-template-areas:
+            "item01 item02 item03"
+            "item01 item04 item05";
+    }
+
+    &__item {
+        @extend .services__item;
+    }
+
+    &__preview {
+        @extend .services__picture;
+    }
+
+    &__link {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        font-size: 0.1rem;
+        color: transparent;
+
+        &::before {
+            @extend .num-list__left::before;
+            width: 6rem;
+            height: 6rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            line-height: 0;
+            content: "";
+            background-image: url(../img/icons/loading.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 3rem;
+        }
+
+        &::after {
+            @extend .num-list__left::after;
+            width: 8rem;
+            height: 8rem;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+    }
+
+    &__item:first-child &__link {
+        &::before {
+            height: 10rem;
+            width: 10rem;
+            background-size: 5rem;
+        }
+
+        &::after {
+            height: 13rem;
+            width: 13rem;
+        }
     }
 }
