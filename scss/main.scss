@@ -38,5 +38,9 @@ p {
     line-height: 4.3rem;
 }
 
+a {
+    color: inherit;
+}
+
 @import "header";
 @import "content";
